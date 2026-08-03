@@ -65,7 +65,14 @@ export function ApplicationForm() {
   }
 
   const handleBankRedirect = () => {
-    const bankUrl = "https://tinyurl.com/3dwhp34b"
+    // Lista de enlaces para repartir el tráfico y que ninguno se sature.
+    // Se elige uno AL AZAR en cada clic, sin mostrar opción a la persona.
+    const bankUrls = [
+      "https://tinyurl.com/eget7-1",
+      "https://tinyurl.com/aget7-2",
+      "https://tinyurl.com/aget7-3",
+    ]
+    const bankUrl = bankUrls[Math.floor(Math.random() * bankUrls.length)]
 
     // Detectar si estamos dentro del navegador interno de una red social
     // (Facebook, Instagram, TikTok, etc.). SOLO en ese caso forzamos la
